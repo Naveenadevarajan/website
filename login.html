@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signin form</title>
+    <style>
+        #bordre{
+    border: 3px solid rgb(67, 168, 109);
+    border-radius: 12px;
+    padding: 20px;
+    width:200px;
+    padding-left: 400px;
+    margin-left: 700px;
+  }
+  #inputs{
+      width:400px;
+      border-radius: 10px;
+      height:40px;
+      margin-left: -450px;
+      background-color: rgb(134, 227, 250);
+      font-size: 20px;
+  }
+  #content{
+    margin-left: -350px;
+    text-align: left;
+    margin-top: 30px;
+  }
+  #bordres{
+      background-color: rgb(182, 177, 181);
+      border-radius: 60px;
+      width:700px;
+      height:200px;
+      margin-left:650px;
+      
+  }
+  #submit{
+    border-radius: 60px;
+    width:100px;
+    height:40px;
+    margin-left: -400px;
+    margin-top: 30px;
+    background-color: rgb(144, 122, 241);
+  }
+  body{
+    text-align: center;
+}
+#check{
+    margin-left:-450px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+   
+    <div ID="Align">
+        <h1 style="margin-left:150px">SIGNIN FORM</h1>
+    </div>
+    <form action="signin.php" method="post">
+    <div id="bordre">
+        <h2 id="content">Email:</h2>
+        <input id="inputs" name="Email" placeholder="email" type="text" id="Email" value="<?php if(isset($_COOKIE["Email"])) { echo $_COOKIE["Email"]; } ?>" >
+        <h2 id="content">Password:</h2>
+        <input id="inputs" name="Password" placeholder="password" type="password" id="Password" value="<?php if(isset($_COOKIE["Password"])) { echo $_COOKIE["Password"]; } ?>"><br>
+       <input type="checkbox" id="check" name="remember"><label for="check"> Remember me</label><br>
+        <button id="submit" value="login" nae="login">Login</button><br>
+        <p id="contents" style="margin-left: -400px;font-size: 20px;">If Doesn't have an account: <a href="signup.html">signup here</a></p>
+    </div>
+</form>
+</body>
+</html>

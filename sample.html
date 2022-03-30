@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>search bar</title>
+    <link rel="StyleSheet" href="STYLE.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Lobster&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <div class="back">
+  <header>
+    <div class="navbar">
+        <h2><img id="bar"src="Daco_393260.png"/></h2>
+    </div>
+    <div class="barleft"><ul>
+      <li><a>HOME</a></li>
+      <li><a>ITEMS</a></li>
+      <li><a href="signup.html">SIGN UP</a></li>
+        <li><a><img src="Daco_1540991.png" width="40px" height="30px"/></a></li>
+</div></ul>
+</header>
+  <div class="header">
+    <h1 ID="heading"> CAFE EUROPA</h1>
+    </div>
+    <br>
+<div id="border"><img id="imgs" src="download.jpg"/>
+  <div id="para">
+      <p>Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus.
+           From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee. The seeds are then roasted,
+            a process which transforms them into a consumable product: roasted coffee, which is ground into fine particles that are typically 
+            steeped in hot water before being filtered out, producing a cup of coffee. Coffee is darkly colored, bitter, slightly acidic and 
+            has a stimulating effect in humans, primarily due to its caffeine content.It is one of the most popular drinks in the world and can be prepared and presented in a variety of ways (e.g., espresso, French press,
+           caffelatte, or already-brewed canned coffee).It is usually served hot, although chilled or iced coffee is common. Sugar, sugar 
+           substitutes, milk or cream are often used to lessen the bitter taste or enhance the flavor.
+           It may be served with coffee cake or another sweet dessert, like doughnuts. A commercial establishment that sells prepared coffee beverages is known as a coffeehouse or coffee shop 
+          (not to be confused with Dutch coffeeshops selling cannabis).
+  </div></div><br/>
+  <div id="border"> <img id="imge" src="images.jpg"/>
+    <div id="paras">
+        <p>Clinical research indicates that moderate coffee consumption is benign or mildly beneficial as a stimulant in healthy adults, with continuing 
+            research on whether long-term consumption reduces the risk of some diseases, although some of the long-term studies are of questionable credibility.
+            The earliest credible evidence of the drinking of coffee in the form of the modern beverage appears in modern-day Yemen from the middle of the 15th 
+            century in Sufi shrines, where coffee seeds were first roasted and brewed in a manner similar to current methods.[2] The Yemenis procured the coffee 
+            beans from the Ethiopian Highlands via coastal Somali intermediaries and began cultivation. By the 16th century, the drink had reached the rest of the
+             Middle East and North Africa, later spreading to Europe.</p>
+    </div></div><br/>
+    <div id="borders">
+      <div id="image"><img id="image1" src="images (2).jpg"/></div>
+      <div id="image"><img id="image2" src="espresso-coffee-one.jpg"/></div>
+      <div id="image"><img id="image3" src="images (1).jpg"/></div>
+      <div id="image"><img id="image4" src="espresso-macchiato-one.jpg"/></div>
+    </div><br/>
+<div id="bordres">
+<h2>Employee needed</h2>
+<h2>Salary details:</h2>
+<?php
+   $age=array(24,45,50,30);
+   foreach ($age as $x){
+       if($x<=25){echo "The salary of the employee with the age of $x is 25000<br/>";}
+       elseif($x<=40){echo "The salary of the employee with the age of $x is 20000<br/>";}
+       elseif($x<=30){echo "The salary of the employee with the age of $x is 20000<br/>";}
+       else{echo "The salary of the employee with the age of $x is 15000<br/>";}
+   }
+?>
+</div><br/>
+<div id="bordero">
+  <h1 style="color:rgb(31, 135, 153)">For any details contact the below owners</h1>
+  <form action=""> 
+    <h3 style="color:rgb(31, 135, 153)">select any owners:</h3>
+    <select name="customers" onchange="showowner(this.value)" id="txt">
+      <option value="">Select a owner:</option>
+      <option value="202001">Naveena</option>
+      <option value="202002">Sindhu</option>
+      <option value="202003">Swetha</option>
+      <option value="202004">Rithika</option>
+    </select>
+  </form>
+  <br>
+  <div id="txtHint">owner info will be listed here...</div>
+  <script>
+  function showowner(str) {
+    if (str == "") {
+      document.getElementById("txtHint").innerHTML = "";
+      return;
+    }
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "getowner.php?q="+str);
+    xhttp.send();
+  }
+  </script>
+</div>
+</div>
+</body>
+</html>
